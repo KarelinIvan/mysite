@@ -10,8 +10,8 @@ class Post(models.Model):
 
     class Status(models.TextChoices):
         # Статус статьи
-        DRAFT = 'DF', 'Draft'
-        PUBLISHED = 'PB', 'Publised'
+        DRAFT = 'DF', 'Черновик'
+        PUBLISHED = 'PB', 'Опубликовано'
 
     title = models.CharField(max_length=250, verbose_name='Наименование')
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='blog_posts',

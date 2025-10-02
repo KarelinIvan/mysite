@@ -9,7 +9,7 @@
                 <a href="{% url 'blog:post_detail' post.id %}">{{ post.title }}</a>
             </h2>
             <p>
-                Published {{ post.publish }}
+                Опубликовано: {{ post.publish }} Автор: {{ post.author }}
             </p>
         {% endfor %}
     </section>

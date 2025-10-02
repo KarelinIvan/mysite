@@ -4,4 +4,8 @@
 
 {% block content %}
     <h1>{{ post.title }}</h1>
+    <p>
+        Опубликовано: {{ post.publish }} Автор: {{ post.author }}
+    </p>
+    {{ post.content|linebreaks }}
 {% endblock %}

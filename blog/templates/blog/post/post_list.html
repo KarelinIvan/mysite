@@ -11,6 +11,7 @@
             <p>
                 Опубликовано: {{ post.publish }} Автор: {{ post.author }}
             </p>
+            {{ post.content|truncatewords:40|linebreaks }}
         {% endfor %}
     </section>
 {% endblock %}

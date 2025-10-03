@@ -10,16 +10,27 @@
 </head>
 <body>
 <section>
+    <!-- Основной контент размещается слева -->
     <div class="content">
+        <!-- Подключение навигации -->
         {% include 'blog/navbar.html' %}
 
+        <!-- Контент -->
         {% block content %}
         {% endblock %}
 
+        <!-- Подключение подвала -->
         {% include 'blog/footer.html' %}
     </div>
+
+    <!-- Боковая панель размещается справа -->
     <div class="sidebar">
         <h2>My blog</h2>
+        <form>
+            <input type="search" name="poisk" placeholder="Поиск">
+            <input type="submit" value="Искать">
+        </form>
+
     </div>
 </section>
 </body>

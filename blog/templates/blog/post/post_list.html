@@ -3,13 +3,12 @@
 
 {% block content %}
     <section>
-        <h1>Мой блог</h1>
         {% for post in posts %}
             <h2>
                 <a href="{% url 'blog:post_detail' post.id %}">{{ post.title }}</a>
             </h2>
             <p>
-                Опубликовано: {{ post.publish }} Автор: {{ post.author }}
+                Опубликовано: {{ post.publish }} Автор: {{ post.author }} Последнее изменение: {{ post.updated }}
             </p>
             {{ post.content|truncatewords:40|linebreaks }}
         {% endfor %}

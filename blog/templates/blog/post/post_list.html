@@ -3,14 +3,21 @@
 
 {% block content %}
     <section>
-        {% for post in posts %}
-            <h2>
-                <a href="{% url 'blog:post_detail' post.id %}">{{ post.title }}</a>
-            </h2>
-            <p>
-                Опубликовано: {{ post.publish }} Автор: {{ post.author }} Последнее изменение: {{ post.updated }}
-            </p>
-            {{ post.content|truncatewords:40|linebreaks }}
-        {% endfor %}
+        <div>
+            {% for post in posts %}
+                <h2>
+                    <a href="{% url 'blog:post_detail' post.id %}">{{ post.title }}</a>
+                </h2>
+                <p  class="info-post">
+                    Опубликовано: {{ post.publish }} Автор: {{ post.author }}
+                </p>
+                <p class="description">
+                    {{ post.content|truncatewords:40|linebreaks }}
+                </p>
+                <p  class="info-post">
+                    Последнее изменение: {{ post.updated }}
+                </p>
+            {% endfor %}
+        </div>
     </section>
 {% endblock %}

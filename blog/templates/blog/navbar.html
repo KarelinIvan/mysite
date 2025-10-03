@@ -1,11 +1,12 @@
 {% load static %}
 <header>
-    <div class="header-logo">
-        <img src="{% static '#' %}" alt="Логотип" width="100" height="100">
+    <div >
+        <img class="header-logo" src="{% static '#' %}" alt="Логотип" width="100" height="100">
+
+        <nav class="header-menu">
+            <button><a href="{% url 'blog:post_list' %}">Главная</a></button>
+            <button><a href="#">Обо мне</a></button>
+            <button><a href="#">Контакты</a></button>
+        </nav>
     </div>
-    <nav class="header-menu">
-        <button><a href="{% url 'blog:post_list' %}">Главная</a></button>
-        <button><a href="#">Обо мне</a></button>
-        <button><a href="#">Контакты</a></button>
-    </nav>
 </header>

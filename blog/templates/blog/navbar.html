@@ -1,8 +1,5 @@
-{% load static %}
-<header>
-    <div >
-        <img class="header-logo" src="{% static '#' %}" alt="Логотип" width="100" height="100">
-
+<header class="heading">
+    <div>
         <nav class="header-menu">
             <button><a href="{% url 'blog:post_list' %}">Главная</a></button>
             <button><a href="#">Обо мне</a></button>

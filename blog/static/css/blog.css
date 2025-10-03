@@ -1,9 +1,16 @@
-.header-logo {
-    float: left;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-.header-menu {
-    float: right;
+.page {
+    font-family: Arial, Verdana, sans-serif;
+    padding: 30px;
+    background-color: whitesmoke;
+}
+
+.heading {
+    background: aquamarine;
 }
 
 .content {
@@ -16,4 +23,17 @@
     width: 30%;
     background: #efefef;
     height: 100%;
+}
+
+.footer {
+    background: aquamarine;
+}
+
+h2 {
+    padding: 20px;
+}
+
+p {
+    padding: 5px;
+    margin: 15px;
 }

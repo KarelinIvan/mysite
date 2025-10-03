@@ -5,7 +5,10 @@
 {% block content %}
     <h1>{{ post.title }}</h1>
     <p>
-        Опубликовано: {{ post.publish }} Автор: {{ post.author }} Последнее изменение: {{ post.updated }}
+        Опубликовано: {{ post.publish }} Автор: {{ post.author }}
     </p>
     {{ post.content|linebreaks }}
+    <p>
+        Последнее изменение: {{ post.updated }}
+    </p>
 {% endblock %}

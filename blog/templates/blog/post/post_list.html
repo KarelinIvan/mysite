@@ -8,9 +8,12 @@
                 <a href="{% url 'blog:post_detail' post.id %}">{{ post.title }}</a>
             </h2>
             <p>
-                Опубликовано: {{ post.publish }} Автор: {{ post.author }} Последнее изменение: {{ post.updated }}
+                Опубликовано: {{ post.publish }} Автор: {{ post.author }}
             </p>
             {{ post.content|truncatewords:40|linebreaks }}
+            <p>
+                Последнее изменение: {{ post.updated }}
+            </p>
         {% endfor %}
     </section>
 {% endblock %}

@@ -1,10 +1,11 @@
+{% load static %}
 <header>
     <div class="header-logo">
-        <img src="#" alt="Логотип" width="100" height="100">
+        <img src="{% static '#' %}" alt="Логотип" width="100" height="100">
     </div>
     <nav class="header-menu">
-        <a href="{% url 'blog:post_list' %}">Главная</a>
-        <a href="#">Обо мне</a>
-        <a href="#">Контакты</a>
+        <button><a href="{% url 'blog:post_list' %}">Главная</a></button>
+        <button><a href="#">Обо мне</a></button>
+        <button><a href="#">Контакты</a></button>
     </nav>
 </header>

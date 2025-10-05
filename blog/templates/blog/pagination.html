@@ -3,13 +3,23 @@
 <div class="pagin">
     <span class="step-links">
         {% if page_obj.has_previous %}
-            <a href="?page={{ page_obj.previous_page_number }}">Назад</a>
+            <a href="?page={{ page_obj.previous_page_number }}">Предыдущая</a>
+        {% else %}
+            <a>Предыдущая</a>
         {% endif %}
-        <span class="current">
-            Страница {{ page_obj.number }} по {{ page_obj.paginator.num_pages }}
-        </span>
+
+        {% for i in page_obj.paginator.page_range %}
+          {% if page_obj.number == i %}
+            <a href="#">{{ i }} </a>
+          {% else %}
+            <a href="?page={{ i }}">{{ i }}</a>
+          {% endif %}
+        {% endfor %}
+
         {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}">Вперед</a>
+          <a href="?page={{ page_obj.next_page_number }}">Следующая</a>
+        {% else %}
+          <a>Следующая</a>
         {% endif %}
     </span>
 </div>

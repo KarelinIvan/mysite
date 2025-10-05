@@ -18,5 +18,9 @@
                 </p>
             </div>
         {% endfor %}
+
+    {% include 'blog/pagination.html' with page=posts %}
+
     </section>
+
 {% endblock %}

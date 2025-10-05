@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.conf import settings
+from django.urls import reverse
 
 NULLABlE = {'blank': True, 'null': True}
 
@@ -22,16 +23,20 @@ class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='blog_posts',
                                verbose_name='Автор статьи')
     image = models.ImageField(verbose_name='Изображение', **NULLABlE)
-    content = models.TextField()
+    content = models.TextField(verbose_name='Контент')
     created = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
     publish = models.DateTimeField(default=timezone.now, verbose_name='Дата публикации')
     updated = models.DateTimeField(auto_now=True, verbose_name='Дата изменения')
     status = models.CharField(max_length=2, choices=Status.choices, default=Status.DRAFT, verbose_name='Статус')
     objects = models.Manager() #Применяется по умолчанию
     published = PublishedManager()
+    slug = models.SlugField(max_length=250, unique_for_date='publish', verbose_name='Короткая метка')
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('blog:post_detail', args=[self.id])
 
     class Meta:
         ordering = ['-publish']

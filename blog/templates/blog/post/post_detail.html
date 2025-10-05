@@ -8,7 +8,9 @@
         <p  class="info-post">
             Опубликовано: {{ post.publish }} Автор: {{ post.author }}
         </p>
-        {{ post.content|linebreaks }}
+        <p class="description">
+            {{ post.content|linebreaks }}
+        </p>
         <p  class="info-post">
             Последнее изменение: {{ post.updated }}
         </p>

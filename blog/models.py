@@ -8,8 +8,10 @@ NULLABlE = {'blank': True, 'null': True}
 
 class PublishedManager(models.Manager):
     """ Класс для формирования отображения только статей имеющих статус опубликовано """
+
     def get_queryset(self):
         return super().get_queryset().filter(status=Post.Status.PUBLISHED)
+
 
 class Post(models.Model):
     """ Модель статьи """
@@ -28,7 +30,7 @@ class Post(models.Model):
     publish = models.DateTimeField(default=timezone.now, verbose_name='Дата публикации')
     updated = models.DateTimeField(auto_now=True, verbose_name='Дата изменения')
     status = models.CharField(max_length=2, choices=Status.choices, default=Status.DRAFT, verbose_name='Статус')
-    objects = models.Manager() #Применяется по умолчанию
+    objects = models.Manager()  # Применяется по умолчанию
     published = PublishedManager()
     slug = models.SlugField(max_length=250, unique_for_date='publish', verbose_name='Короткая метка')
 

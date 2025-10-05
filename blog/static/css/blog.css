@@ -1,16 +1,9 @@
-* {
-    margin: 0;
-    padding: 0;
+.header-logo {
+    float: left;
 }
 
-.page {
-    font-family: Arial, Verdana, sans-serif;
-    padding: 30px;
-    background-color: whitesmoke;
-}
-
-.heading {
-    background: red;
+.header-menu {
+    float: right;
 }
 
 .content {
@@ -23,35 +16,4 @@
     width: 30%;
     background: #efefef;
     height: 100%;
-    padding: 2%;
-}
-
-.footer {
-    background: red;
-}
-
-h2 {
-    padding: 10px;
-}
-
-p {
-    padding: 5px;
-    margin: 1px;
-}
-
-.info-post {
-    font-style: oblique;
-}
-
-div {
-    border-style: solid;
-    border-width: thin;
-    border-color: black;
-    padding-top: 10px;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-bottom: 5px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-
 }

@@ -1,4 +1,5 @@
 {% extends 'blog/base.html' %}
+{% load static %}
 
 
 {% block title %}{{ post.title }}{% endblock %}
@@ -15,6 +16,19 @@
         <p class="info-post">
             Последнее изменение: {{ post.updated }}
         </p>
+    </div>
+
+    <div>
+        <h1>{{ my_object.title }}</h1>
+        <p>{{ my_object.description }}</p>
+
+        <!-- Вставляем сюда код кнопки "Поделиться" -->
+        <p>Поделиться:</p>
+        <div class="vk_share_button">
+            <a href="https://vk.com/share.php?url={{ my_object.get_absolute_url }}&title={{ my_object.title }}&description={{ my_object.description }}&image={{ my_object.image.url }}" target="_blank">
+                <img src="{% static '/images/VK_logo_Blue_40x40.png' %}">
+            </a>
+        </div>
     </div>
 {% endblock %}
 

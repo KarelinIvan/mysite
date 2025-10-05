@@ -13,27 +13,29 @@
 </head>
 <body class="page">
     <section>
-        <!-- Основной контент размещается слева -->
-        <div class="content">
-            <!-- Подключение навигации -->
-            {% include 'blog/navbar.html' %}
+        <!-- Подключение навигации -->
+        {% include 'blog/navbar.html' %}
 
-            <!-- Контент -->
-            {% block content %}
-            {% endblock %}
+        <div class="clearfix">
+            <!-- Основной контент размещается слева -->
+            <div class="content">
+                <!-- Контент -->
+                {% block content %}
+                {% endblock %}
+            </div>
 
-            <!-- Подключение подвала -->
-            {% include 'blog/footer.html' %}
+            <!-- Боковая панель размещается справа -->
+            <div class="sidebar">
+                <p>Описание вашего блога...</p>
+                <form class="form-search">
+                    <input type="search" name="poisk" placeholder="Введите текст">
+                    <input type="submit" value="Поиск">
+                </form>
+            </div>
         </div>
 
-        <!-- Боковая панель размещается справа -->
-        <div class="sidebar">
-            <h2>My blog</h2>
-            <form>
-                <input type="search" name="poisk" placeholder="Введите текст">
-                <input type="submit" value="Поиск">
-            </form>
-        </div>
+        <!-- Подключение подвала -->
+        {% include 'blog/footer.html' %}
     </section>
 </body>
 </html>

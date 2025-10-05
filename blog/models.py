@@ -5,11 +5,16 @@ from django.conf import settings
 NULLABlE = {'blank': True, 'null': True}
 
 
+class PublishedManager(models.Manager):
+    """ Класс для формирования отображения только статей имеющих статус опубликовано """
+    def get_queryset(self):
+        return super().get_queryset().filter(status=Post.Status.PUBLISHED)
+
 class Post(models.Model):
-    # Модель статьи
+    """ Модель статьи """
 
     class Status(models.TextChoices):
-        # Статус статьи
+        """ Статус статьи """
         DRAFT = 'DF', 'Черновик'
         PUBLISHED = 'PB', 'Опубликовано'
 
@@ -22,6 +27,8 @@ class Post(models.Model):
     publish = models.DateTimeField(default=timezone.now, verbose_name='Дата публикации')
     updated = models.DateTimeField(auto_now=True, verbose_name='Дата изменения')
     status = models.CharField(max_length=2, choices=Status.choices, default=Status.DRAFT, verbose_name='Статус')
+    objects = models.Manager() #Применяется по умолчанию
+    published = PublishedManager()
 
     def __str__(self):
         return self.title

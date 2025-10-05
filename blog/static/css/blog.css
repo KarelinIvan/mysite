@@ -13,9 +13,11 @@
 .heading {
     background: #3196e8;
     -webkit-box-shadow: 0 0 10px #3196e8;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 10px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    margin-bottom: 2%;
 }
 
 .heading-block {
@@ -44,10 +46,8 @@ button {
     -webkit-box-shadow: 0 0 10px #3196e8;
 }
 
-
-
 h2 {
-    padding: 10px;
+    padding: 15px;
 }
 
 p {
@@ -60,24 +60,23 @@ p {
 }
 
 div {
-    /*
     border-style: solid;
     border-width: thin;
     border-color: deepskyblue;
 
-     */
-    padding-top: 10px;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-bottom: 5px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-
+    padding-top: 1%;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-bottom: 1%;
 }
 
 .footer {
     background: #3196e8;
     -webkit-box-shadow: 0 0 10px #3196e8;
-    padding-bottom: 20px;
-    padding-left: 10px;
+    padding-bottom: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 2%;
+
+    margin-top: 2%;
 }

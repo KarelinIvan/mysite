@@ -3,9 +3,13 @@
 {% block title %}{{ post.title }}{%  endblock %}
 
 {% block content %}
-    <h1>{{ post.title }}</h1>
-    <p>
-        Опубликовано: {{ post.publish }} Автор: {{ post.author }} Последнее изменение: {{ post.updated }}
+    <h2>{{ post.title }}</h2>
+    <p  class="info-post">
+        Опубликовано: {{ post.publish }} Автор: {{ post.author }}
     </p>
     {{ post.content|linebreaks }}
+    <p  class="info-post">
+        Последнее изменение: {{ post.updated }}
+    </p>
+
 {% endblock %}

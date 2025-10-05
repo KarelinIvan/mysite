@@ -1,12 +1,5 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
-.page {
-    font-family: Arial, Verdana, sans-serif;
-    padding: 30px;
-    background-color: whitesmoke;
+.header-logo {
+    float: left;
 }
 
 

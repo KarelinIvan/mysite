@@ -52,3 +52,21 @@ class Post(models.Model):
         indexes = [models.Index(fields=['-publish']), ]
         verbose_name = 'Статья'
         verbose_name_plural = 'Статьи'
+
+
+class Comment(models.Model):
+    """ Модель комментариев к постам """
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments',)
+    name = models.CharField(max_length=80, verbose_name='Иия')
+    email = models.EmailField(verbose_name='e-mail')
+    body = models.TextField(verbose_name='Комментарий')
+    created = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
+    updated = models.DateTimeField(auto_now=True, verbose_name='Дата изменения')
+    active = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ['created']
+        indexes = [models.Index(fields=['created']), ]
+
+    def __str__(self):
+        return f'Комментарий {self.name} к статье {self.post}'
